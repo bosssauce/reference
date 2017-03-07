@@ -115,7 +115,7 @@ func SelectRepeater(fieldName string, p interface{}, attrs map[string]string, co
 
 func encodeDataToOptions(contentType, tmplString string) (map[string]string, error) {
 	// encode all content type from db into options map
-	// options in form of map["?type=<contentType>&id=<id>"]t.String()
+	// options in form of map["/api/content?type=<contentType>&id=<id>"]t.String()
 	options := make(map[string]string)
 
 	var all map[string]interface{}
