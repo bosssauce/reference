@@ -134,7 +134,7 @@ func encodeDataToOptions(contentType, tmplString string) (map[string]string, err
 
 	for i := range data {
 		item := data[i].(map[string]interface{})
-		k := fmt.Sprintf("?type=%s&id=%.0f", contentType, item["id"].(float64))
+		k := fmt.Sprintf("/api/content?type=%s&id=%.0f", contentType, item["id"].(float64))
 		v := &bytes.Buffer{}
 		err := tmpl.Execute(v, item)
 		if err != nil {
